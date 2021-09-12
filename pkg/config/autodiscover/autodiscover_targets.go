@@ -66,6 +66,7 @@ func FindTestTarget(labels []configsections.Label, target *configsections.TestTa
 	}
 
 	target.DeploymentsUnderTest = append(target.DeploymentsUnderTest, FindTestDeployments(labels, target)...)
+	//target.Nodes =
 }
 
 // FindTestDeployments uses the containers' namespace to get its parent deployment. Filters out non CNF test deployments,
