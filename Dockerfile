@@ -13,6 +13,10 @@ ENV TEMP_DIR=/tmp
 
 # Install dependencies
 RUN yum install -y gcc git jq make wget
+# install helm 
+RUN wget https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz && \
+    tar -xvf helm-v3.8.0-linux-amd64.tar.gz && \
+    cp linux-amd64/helm /usr/local/bin/helm
 
 # Install Go binary
 ENV GO_DL_URL="https://golang.org/dl"
